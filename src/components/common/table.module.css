@@ -1,0 +1,27 @@
+.tableContainer {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border: none;
+}
+
+thead.tableHeader {
+    background-color: #fff;
+    color: #999;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+th.tableHead {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+td.tableData {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

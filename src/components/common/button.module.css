@@ -1,0 +1,9 @@
+.simpleButton {
+    background: #fff;
+    border-radius: 4px;
+    border: 2px solid rgb(97, 103, 215);
+    color: rgb(97, 103, 215);
+    font-size: 12px;
+    font-weight: 600;
+    height: 30px;
+}
