@@ -1,11 +1,14 @@
+import styles from './App.module.css';
+
 import React from 'react';
-import './App.css';
-import Investors from './Investors'
+import TabContainer from './TabContainer'
+import AppHeader from './components/AppHeader';
 
 function App() {
   return (
-    <div className="App">
-      <Investors />
+    <div className={styles.App}>
+        <AppHeader />
+        <TabContainer />
     </div>
   );
 }

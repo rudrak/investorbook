@@ -1,0 +1,32 @@
+.panel {
+    padding: 10px 4px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.heading {
+    font-weight: 400;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+svg {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+}
+
+.searchIcon {
+    align-self: center;
+    position: absolute;
+    right: 24px;
+}
+
+.panelContent {
+    width: 100%;
+}
