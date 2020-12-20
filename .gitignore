@@ -1,1 +1,6 @@
 db/sampledata.sql
+# dependencies
+node_modules
+
+#Misc
+.DS_Store
