@@ -15,6 +15,10 @@
     margin-right: 10px;
 }
 
+.toolbarIcon {
+    text-transform: uppercase;
+}
+
 svg {
     vertical-align: middle;
     width: 24px;

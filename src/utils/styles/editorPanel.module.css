@@ -1,0 +1,67 @@
+.container {
+    width: 100%;
+}
+
+.back {
+    margin-right: 10px;
+}
+
+.toolSet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.toolbarIcon {
+    height: 12px;
+    width: 12px;
+    margin-right: 10px;
+}
+
+.toolbarText {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.headerTools {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+.toolSet {
+    margin-left: 10px;
+}
+
+.identity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+}
+
+.photo_thumbnail {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.subTitle {
+    font-size: 12px;
+}
+
+.add {
+    margin-left: 10px;
+    color: rgba(56, 98, 246);
+}
+
+.content {
+    margin-left: 82px;
+    padding: 0px 10px;
+}
