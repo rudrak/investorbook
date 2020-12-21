@@ -1,0 +1,18 @@
+What needs to improved/does not work.
+- Pagination
+- Routing
+- Reactively close the modals on successful operation and then refresh data in the main table
+- More organized code (move queries to separate modules)
+- Table scroll fix
+- Logo image
+- complete the flows
+- Almost everything under "Advanced" section
+- fonts
+- Need to make cleaner commits for the work (right now a lot of code has leaked between commits)
+- Unit tests
+
+What works well:
+- Lists
+- Interactions on the list
+- Modals and general look and feel
+- Queries on fetching data and the one create investor mutation
