@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useQuery, gql } from '@apollo/client';
 
 import HorizontalTabs from './components/common/HorizontalTabs';
 import Investors from './components/investor/Panel';

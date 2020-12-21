@@ -115,7 +115,7 @@ export default (props) => {
             <div className={panelStyles.header}>
                 <div className={editorStyles.back} onClick={onClose}><FaChevronLeft /></div>
                 <div className={editorStyles.identity}>
-                    <img className={editorStyles.photo_thumbnail} src={data.investor.photo_thumbnail}/>
+                    <img className={editorStyles.photo_thumbnail} src={data.investor.photo_thumbnail} alt="Alt Text"/>
                     <div className={editorStyles.title}>
                         <div className={editorStyles.name}>{data.investor.name}</div>
                         <div className={editorStyles.subTitle}>Total Invested Amount: {5000}</div>

@@ -25,6 +25,7 @@ th.tableHead {
 
 tr.tableRow {
     border: none;
+    padding: 10px;
 }
 
 tr.tableRow:hover, tr.tableRow:focus {
@@ -33,6 +34,7 @@ tr.tableRow:hover, tr.tableRow:focus {
 
 td.tableData {
     word-wrap: break-word;
+    padding: 25px;
 }
 
 .active {

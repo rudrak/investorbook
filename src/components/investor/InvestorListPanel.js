@@ -1,12 +1,14 @@
 import panelStyles from '../../utils/styles/panel.module.css';
 import styles from './investor.module.css';
 
-import React from 'react';
+import React, { useState } from 'react';
+import bind from 'memoize-bind';
 import { useQuery, gql } from '@apollo/client';
 import { FaSearch } from 'react-icons/fa';
 
 import Button from '../common/Button';
 import Table from '../common/Table';
+import AddInvestorModal from './AddInvestorModal';
 
 const GET_INVESTORS = gql`
     query GetInvestors {
@@ -30,7 +32,7 @@ const columns = [
         value: item => {
             return (
                 <div className={styles.identity}>
-                    <img src={item.photo_thumbnail} className={styles.thumbnail} />
+                    <img src={item.photo_thumbnail} className={styles.thumbnail} alt="alt-text"/>
                     <div className={styles.investorName}>{item.name}</div>
                 </div>
             );
@@ -53,8 +55,14 @@ const columns = [
 ];
 
 export default (props) => {
-    const { onSelectRow, selectedRowId, onCreateInvestor } = props;
+    const { onSelectRow, selectedRowId } = props;
     const { loading, error, data } = useQuery(GET_INVESTORS);
+
+    const [showCreateModal, onCreateClick] = useState(false);
+
+    function onToggleCreateInvestor(flag) {
+        onCreateClick(flag);
+    }
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
@@ -67,7 +75,7 @@ export default (props) => {
                 <div className={panelStyles.heading}>Investors</div>
                 <Button
                     label="Add Investor"
-                    onClick={onCreateInvestor}
+                    onClick={bind(onToggleCreateInvestor, this, true)}
                 />
                 <div className={panelStyles.searchIcon}><FaSearch /></div>
             </div>
@@ -80,6 +88,13 @@ export default (props) => {
                     identifier={'id'} // improve on this later (function/Array support)
                 />
             </div>
+            {showCreateModal ? (
+                    <AddInvestorModal
+                        investorId={data.investor.id}
+                        onClose={bind(onToggleCreateInvestor, this, false)}
+                    />
+                ) : null
+            }
         </>
     );
 }

@@ -6,6 +6,7 @@
     font-size: 12px;
     font-weight: 600;
     height: 30px;
+    margin: 0px 5px;
 }
 
 .simpleButton:focus, .simpleButton:hover {

@@ -1,0 +1,75 @@
+.modalBg {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(100, 100, 100, .3);
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    position: fixed;
+    min-width: 500px;
+    z-index: 100;
+    background: #fff;
+    border-radius: 4px;
+    max-width: 600px;
+    max-height: 280px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 20px 10px 35px;
+}
+
+.heading {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.subHeading {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #444;
+}
+
+.modalBody {
+    margin: 20px 0px;
+}
+
+.modalFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+input.inputs {
+    width: 100%;
+    margin-bottom: 20px;
+    border: none !important;
+    border-bottom: 1px solid rgb(97, 103, 215) !important;
+    box-shadow: none !important;
+}
+
+.loading {
+    font-size: 12px;
+    margin: 10px 0px;
+    padding: 5px 0px;
+}
+
+.error {
+    font-size: 12px;
+    background: rgb(97, 103, 215, 0.3);
+    color: #333;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.errorIcon {
+    margin-right: 5px;
+    height: 14px;
+    width: 14px;
+}

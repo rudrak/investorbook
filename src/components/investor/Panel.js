@@ -3,18 +3,13 @@ import panelStyles from '../../utils/styles/panel.module.css';
 import React, { useState } from 'react';
 
 import InvestorEditor from './InvestorEditor';
-import InvestorTable from './InvestorTable';
+import InvestorListPanel from './InvestorListPanel';
 
 export default () => {
     const [selectedRowId, setSelectedRowId] = useState(null);
-    const [isCreate, onCreateClick] = useState(false);
 
     function onSelectRow(selectedRowId) {
         setSelectedRowId(selectedRowId);
-    }
-
-    function onCreateInvestor() {
-        onCreateClick(true);
     }
 
     function onCloseEditor() {
@@ -25,15 +20,13 @@ export default () => {
         <div className={panelStyles.panel}>
             {selectedRowId ? (
                     <InvestorEditor
-                        isCreate={isCreate}
                         itemId={selectedRowId}
                         onClose={onCloseEditor}
                     />
                 ) : (
-                    <InvestorTable
+                    <InvestorListPanel
                         onSelectRow={onSelectRow}
                         onSelectedRowId={selectedRowId}
-                        onCreateInvestor={onCreateInvestor}
                     />
                 )
             }
