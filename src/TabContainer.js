@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client';
 
-import Table from './components/common/Table';
 import HorizontalTabs from './components/common/HorizontalTabs';
 import Investors from './components/investor/Panel';
 import Companies from './components/company/Panel';

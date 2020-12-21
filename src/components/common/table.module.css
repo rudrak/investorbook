@@ -3,8 +3,10 @@
 }
 
 .table {
-    width: 100%;
+    width: calc(100% - 4px);
     border: none;
+    padding: 0px 2px;
+    table-layout: fixed;
 }
 
 thead.tableHeader {
@@ -21,7 +23,18 @@ th.tableHead {
     text-transform: uppercase;
 }
 
+tr.tableRow {
+    border: none;
+}
+
+tr.tableRow:hover, tr.tableRow:focus {
+    border-left: 5px solid rgb(97, 103, 215) !important;
+}
+
 td.tableData {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    word-wrap: break-word;
+}
+
+.active {
+    border-left: 5px solid rgb(97, 103, 215) !important;
 }

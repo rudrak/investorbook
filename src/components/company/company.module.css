@@ -1,0 +1,15 @@
+.investors {
+    font-size: 11px;
+    color: rgb(70, 70, 70);
+}
+
+.companyName {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.identity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
