@@ -7,3 +7,24 @@
     font-weight: 600;
     height: 30px;
 }
+
+.simpleButton:focus, .simpleButton:hover {
+    background: none;
+}
+
+.isPrimary {
+    border: none;
+    background: rgb(97, 103, 215);
+    color: #eee;
+}
+
+.isPrimary:focus, .isPrimary:hover {
+    background: #eee;
+    color: rgb(97, 103, 215);
+}
+
+.isBasic {
+    border: none;
+    background: transparent;
+    color: rgb(97, 103, 215);
+}

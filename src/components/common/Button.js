@@ -4,8 +4,12 @@ import React from 'react';
 import cns from 'classnames';
 
 export default (props) => {
-    const { label, onClick } = props;
+    const { label, onClick, isPrimary, isBasic, children } = props;
+    const classes = cns('pure-button', styles.simpleButton, {
+        [styles.isPrimary]: isPrimary,
+        [styles.isBasic]: isBasic
+    });
     return (
-        <button className={cns('pure-button', styles.simpleButton)}>{label}</button>
+        <button className={classes} onClick={onClick}>{label || children}</button>
     );
 }
