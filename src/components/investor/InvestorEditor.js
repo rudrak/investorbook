@@ -69,7 +69,7 @@ const columns = [
 
 export default (props) => {
     const { itemId, onClose } = props;
-    //const { loading, error, data } = useQuery(getQuery(itemId));
+    const { loading, error, data } = useQuery(getQuery(itemId));
 
     const [selectedRowId, setSelectedRowId] = useState('25');
     const [showAddModal, setShowAddModalFlag] = useState(false);
@@ -82,29 +82,6 @@ export default (props) => {
         setShowAddModalFlag(flag);
     }
 
-    const loading = null, error = null;
-    //SAMPLE DATA TO TEST THINGS OUT: NEEDS TO BE REMOVED
-    const data = {investor: {
-        id: '42',
-        name: 'Investor1',
-        photo_thumbnail: 'https://randomuser.me/api/portraits/thumb/women/7.jpg',
-        investments: [
-            {
-                company: { name: 'Comp1' },
-                amount: 1000
-            },
-            {
-                company: { name: 'Comp2' },
-                amount: 10020
-            },{
-                company: { name: 'Comp3' },
-                amount: 10400
-            },{
-                company: { name: 'Comp4' },
-                amount: 13000
-            },
-        ]
-    }};
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     if (data.investor.length === 0) return <p>The database is empty!</p>
