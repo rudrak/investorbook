@@ -6,7 +6,7 @@ import InvestorEditor from './InvestorEditor';
 import InvestorTable from './InvestorTable';
 
 export default () => {
-    const [selectedRowId, setSelectedRowId] = useState('25');
+    const [selectedRowId, setSelectedRowId] = useState(null);
     const [isCreate, onCreateClick] = useState(false);
 
     function onSelectRow(selectedRowId) {
@@ -17,12 +17,17 @@ export default () => {
         onCreateClick(true);
     }
 
+    function onCloseEditor() {
+        setSelectedRowId(null);
+    }
+
     return (
         <div className={panelStyles.panel}>
             {selectedRowId ? (
                     <InvestorEditor
                         isCreate={isCreate}
                         itemId={selectedRowId}
+                        onClose={onCloseEditor}
                     />
                 ) : (
                     <InvestorTable

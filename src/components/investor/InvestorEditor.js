@@ -3,11 +3,13 @@ import panelStyles from '../../utils/styles/panel.module.css';
 import styles from './investor.module.css';
 
 import React, { useState } from 'react';
+import bind from 'memoize-bind';
 import { useQuery, gql } from '@apollo/client';
 import { FaChevronLeft } from 'react-icons/fa';
 import { BsTrash, BsPencil } from 'react-icons/bs';
 
 import Table from '../common/Table';
+import AddInvestmentModal from './AddInvestmentModal';
 
 function getQuery(id) {
     return gql`
@@ -66,17 +68,24 @@ const columns = [
 ];
 
 export default (props) => {
-    const { itemId } = props;
+    const { itemId, onClose } = props;
     //const { loading, error, data } = useQuery(getQuery(itemId));
 
     const [selectedRowId, setSelectedRowId] = useState('25');
+    const [showAddModal, setShowAddModalFlag] = useState(false);
 
     function onSelectRow(selectedRowId) {
         setSelectedRowId(selectedRowId);
     }
 
+    function toggleAddInvestment(flag) {
+        setShowAddModalFlag(flag);
+    }
+
     const loading = null, error = null;
+    //SAMPLE DATA TO TEST THINGS OUT: NEEDS TO BE REMOVED
     const data = {investor: {
+        id: '42',
         name: 'Investor1',
         photo_thumbnail: 'https://randomuser.me/api/portraits/thumb/women/7.jpg',
         investments: [
@@ -104,7 +113,7 @@ export default (props) => {
     return (
         <div className={editorStyles.container}>
             <div className={panelStyles.header}>
-                <div className={editorStyles.back}><FaChevronLeft /></div>
+                <div className={editorStyles.back} onClick={onClose}><FaChevronLeft /></div>
                 <div className={editorStyles.identity}>
                     <img className={editorStyles.photo_thumbnail} src={data.investor.photo_thumbnail}/>
                     <div className={editorStyles.title}>
@@ -126,7 +135,10 @@ export default (props) => {
             <div className={editorStyles.content}>
                 <div className={editorStyles.identity}>
                     Investors
-                    <div className={editorStyles.add}>&#x0002B; Add Investor</div>
+                    <div
+                        className={editorStyles.add}
+                        onClick={bind(toggleAddInvestment, this, true)}
+                    >&#x0002B; Add Investor</div>
                 </div>
                 <div>
                     <Table
@@ -134,10 +146,17 @@ export default (props) => {
                         columns={columns}
                         selectedRowId={selectedRowId}
                         onSelectRow={onSelectRow}
-                        identifier={'id'} // improve on this later (function/Array support)
+                        identifier={['company']} // improve on this later (function/Array support)
                     />
                 </div>
             </div>
+            {showAddModal ? (
+                    <AddInvestmentModal
+                        investorId={data.investor.id}
+                        onClose={bind(toggleAddInvestment, this, false)}
+                    />
+                ) : null
+            }
         </div>
     );
 }
